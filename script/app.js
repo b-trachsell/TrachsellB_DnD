@@ -15,6 +15,7 @@
 		//change elements on the left to match bg
 		// Button below the esc key for those weird quotes
 		//.style lets you add css whithin JS
+		
 		pieceNames.forEach((piece, index) => {
 			puzzlePieces[index].src = `images/${piece + this.dataset.puzzleref}.jpg`;
 			puzzlePieces[index].id = `${piece + this.dataset.puzzleref}`;
@@ -24,8 +25,14 @@
 
 
 		gameBoard.style.backgroundImage = `url(images/background${this.dataset.puzzleref}.jpg)`;
-		debugger;
+		resetPuzzlePieces();
 	}
+
+	function resetPuzzlePieces(){
+		
+	}
+
+
 
 	function allowDrag(){
 		console.log('Drag Start!');
@@ -39,6 +46,7 @@
 		console.log('DragOver Start!');
 	}
 	function allowDrop(event){
+		
 		event.preventDefault();
 		console.log('Drop Start!');
 
