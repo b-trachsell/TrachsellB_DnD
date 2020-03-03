@@ -40,19 +40,25 @@
 			event.dataTransfer.setData("text/plain", this.id);
 	}
 
-
 	function allowDragOver(event){
 		event.preventDefault();
 		console.log('DragOver Start!');
 	}
+
 	function allowDrop(event){
 		
 		event.preventDefault();
 		console.log('Drop Start!');
 
 		let currentImage = event.dataTransfer.getData("text/plain");
+
+		if event.target.children.length => 0 {
+			debugger;
+		}
+
 		event.target.appendChild(document.querySelector(`#${currentImage}`));
 	}
+
 
 
 	// add event handling here -> how is the user going to use our app?
