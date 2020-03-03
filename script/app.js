@@ -29,7 +29,7 @@
 	}
 
 	function resetPuzzlePieces(){
-		
+		console.log('This is Happening yes');
 	}
 
 
@@ -46,17 +46,18 @@
 	}
 
 	function allowDrop(event){
-		
-		event.preventDefault();
-		console.log('Drop Start!');
-
-		let currentImage = event.dataTransfer.getData("text/plain");
-
-		if event.target.children.length => 0 {
+		console.log(event.target.className);
+		//debugger;
+		if (event.target.className == ('drop-zone')) {
+			console.log(event.target.class);
+			event.preventDefault();
+			console.log('Drop Start!');
+			let currentImage = event.dataTransfer.getData("text/plain");
+			event.target.appendChild(document.querySelector(`#${currentImage}`));
+			console.log(event.target.class);
 			debugger;
 		}
 
-		event.target.appendChild(document.querySelector(`#${currentImage}`));
 	}
 
 
