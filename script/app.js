@@ -4,6 +4,7 @@
 				puzzlePieces = document.querySelectorAll('.puzzle-pieces img'),
 				dropZone = document.querySelectorAll('.drop-zone'),
 				gameBoard = document.querySelector('.puzzle-board');
+				pieceHolder = document.querySelector('.puzzle-pieces')
 
 	const pieceNames = ["topLeft", "topRight", "bottomLeft", "bottomRight"];
 
@@ -29,7 +30,19 @@
 	}
 
 	function resetPuzzlePieces(){
-		
+		dropZone.forEach ((zone, index) => {
+		//goes through each zone
+			if (dropZone[index].children[0] === (undefined)){
+			// dertermines if there is not a child in the zone
+				return;
+			//if so doesn't do anything
+			}
+			else{
+    			pieceHolder.appendChild(dropZone[index].children[0]);
+    		//if there is one, then append it to the pieceHolder
+    		}	
+		})
+
 	}
 
 
@@ -45,6 +58,8 @@
 		console.log('DragOver Start!');
 	}
 
+
+
 	function allowDrop(event){
 		
 		event.preventDefault();
@@ -52,9 +67,6 @@
 
 		let currentImage = event.dataTransfer.getData("text/plain");
 
-		if event.target.children.length => 0 {
-			debugger;
-		}
 
 		event.target.appendChild(document.querySelector(`#${currentImage}`));
 	}
