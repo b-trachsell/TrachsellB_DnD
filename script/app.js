@@ -30,6 +30,7 @@
 	}
 
 	function resetPuzzlePieces(){
+
 		dropZone.forEach ((zone, index) => {
 		//goes through each zone
 			if (dropZone[index].children[0] === (undefined)){
@@ -61,6 +62,15 @@
 
 
 	function allowDrop(event){
+		if (event.target.className == ('drop-zone')) {
+			console.log(event.target.class);
+			event.preventDefault();
+			console.log('Drop Start!');
+			let currentImage = event.dataTransfer.getData("text/plain");
+			event.target.appendChild(document.querySelector(`#${currentImage}`));
+			console.log(event.target.class);
+			debugger;
+		
 		
 		event.preventDefault();
 		console.log('Drop Start!');
@@ -68,7 +78,7 @@
 		let currentImage = event.dataTransfer.getData("text/plain");
 
 
-		event.target.appendChild(document.querySelector(`#${currentImage}`));
+
 	}
 
 
