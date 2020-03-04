@@ -8,8 +8,6 @@
 
 	const pieceNames = ["topLeft", "topRight", "bottomLeft", "bottomRight"];
 
-
-
 	function changeImageSet() {
 		// change all the image elements on the page -> draggable image sources,
 		// and set the drop zone background image based on what the user selects
@@ -21,9 +19,6 @@
 			puzzlePieces[index].src = `images/${piece + this.dataset.puzzleref}.jpg`;
 			puzzlePieces[index].id = `${piece + this.dataset.puzzleref}`;
 		});
-
-
-
 
 		gameBoard.style.backgroundImage = `url(images/background${this.dataset.puzzleref}.jpg)`;
 		resetPuzzlePieces();
@@ -43,10 +38,7 @@
     		//if there is one, then append it to the pieceHolder
     		}	
 		})
-
 	}
-
-
 
 	function allowDrag(){
 		console.log('Drag Start!');
@@ -59,8 +51,6 @@
 		console.log('DragOver Start!');
 	}
 
-
-
 	function allowDrop(event){
 		if (event.target.className == ('drop-zone')) {
 			console.log(event.target.class);
@@ -69,20 +59,9 @@
 			let currentImage = event.dataTransfer.getData("text/plain");
 			event.target.appendChild(document.querySelector(`#${currentImage}`));
 			console.log(event.target.class);
-			debugger;
-		
-		
-		event.preventDefault();
-		console.log('Drop Start!');
-
-		let currentImage = event.dataTransfer.getData("text/plain");
-
-
-
+			
+		}
 	}
-
-
-
 	// add event handling here -> how is the user going to use our app?
 	// what triggers do we need?
 
