@@ -1,5 +1,5 @@
 # Fun with Drag and Drop
-(images/readme_Drop.png)
+(images/readme_Drop.png "image of drag and drop")
 ## Crushing Bugs Assignment
 Are you looking for a challenge?
 Have you ever longed to move four parts of an image into
